@@ -19,3 +19,15 @@ code {
 .nav-row {
   width: 100%
 }
+
+.search-block {
+  padding: 60px
+}
+
+.search-row {
+  justify-content: center;
+}
+
+.data-table td tr {
+  border: 0px;
+}
