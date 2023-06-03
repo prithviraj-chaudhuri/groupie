@@ -6,4 +6,5 @@
     "editor.wordWrapColumn": 130,
     "editor.suggest.showColors": true,
     "editor.wordBreak": "keepAll",
+    "java.configuration.updateBuildConfiguration": "automatic",
 }
