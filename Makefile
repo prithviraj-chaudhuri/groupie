@@ -6,3 +6,6 @@ run:
 
 test:
 	mvn clean test
+
+run-ui:
+	npm start --prefix frontend
