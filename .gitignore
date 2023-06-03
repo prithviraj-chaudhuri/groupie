@@ -26,3 +26,4 @@ replay_pid*
 # Folders to ignore
 target
 src/main/resources/static
+.DS_Store
