@@ -1,13 +1,11 @@
 package com.open.groupie.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.open.groupie.models.db.Group;
 import com.open.groupie.repository.GroupRepository;
-import com.open.groupie.repository.UserRepository;
 
 @Service
 public class GroupService {
