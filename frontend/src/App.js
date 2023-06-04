@@ -7,8 +7,25 @@ function App() {
       <nav class="navbar navbar-expand-lg navbar-light nav-bg">
         <div class="row nav-row">
           <div class="col-sm-8">
-            <div class="col-sm-2">
-              <a class="navbar-brand" href="#">Groupie</a>
+            <div class="row">
+              <div class="col-sm-1">
+                <a class="navbar-brand middle-text" href="#">Groupie</a>
+              </div>
+              <div class="col-sm-9">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link middle-text nav-button" href="#">Search</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link middle-text nav-button" href="#">New Group</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link middle-text nav-button" href="#">Configuration</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-sm-4">
@@ -25,7 +42,7 @@ function App() {
           </div>
         </div>
       </nav>
-      <main role="main" class="container">
+      <main role="main" class="container main-block">
         <div class="row search-row">
           <div class="col-sm-8">
             <div class="row">
@@ -45,9 +62,9 @@ function App() {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Group Name</th>
+                <th scope="col">LDAP Cname</th>
+                <th scope="col">Type</th>
               </tr>
             </thead>
             <tbody>
