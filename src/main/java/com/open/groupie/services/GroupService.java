@@ -21,11 +21,7 @@ public class GroupService {
 
     }
 
-    public List<Group> getAllGroupsWithMember(String uid) {
-        return groupRepository.findGroupsByUser_uidContain(uid);
-    }
-
     public List<Group> getAllGroupsMatchKeyword(String keyWord) {
-        return groupRepository.findGroupsByNameContains(keyWord);
+        return groupRepository.findGroupsByNameLike(keyWord);
     }
 }

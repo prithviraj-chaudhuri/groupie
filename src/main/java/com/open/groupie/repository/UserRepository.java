@@ -7,5 +7,5 @@ import com.open.groupie.models.db.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findUserByUidContains(String uid);
+    User findUserByUid(String uid);
 }
