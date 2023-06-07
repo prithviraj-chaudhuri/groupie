@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.jms.core.JmsTemplate;
 
 import com.open.groupie.models.db.Group;
+import com.open.groupie.models.jms.JmsGroup;
 import com.open.groupie.services.GroupService;
 
 @RestController
@@ -15,13 +17,19 @@ import com.open.groupie.services.GroupService;
 public class GroupController {
 
     private GroupService groupService;
+    private JmsTemplate jmsTemplate;
 
-    public GroupController(GroupService groupService) {
+    public GroupController(GroupService groupService, JmsTemplate jmsTemplate) {
         this.groupService = groupService;
+        this.jmsTemplate = jmsTemplate;
     }
 
     @GetMapping
     public List<Group> getGroups() {
+        JmsGroup group = new JmsGroup();
+        group.setSource("Test");
+        group.setMessage("TestMessage");
+        jmsTemplate.convertAndSend("group", group);
         return groupService.getAllGroups();
     }
 

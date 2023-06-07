@@ -1,3 +1,7 @@
+start-activemq:
+	clear
+	./activemq/run.sh
+
 build:
 	clear
 	mvn clean package -Dmaven.test.skip=true
