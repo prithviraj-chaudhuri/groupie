@@ -1,12 +1,9 @@
 package com.open.groupie.models.db;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,9 +17,6 @@ public class User {
 
     @Column(name = "uid")
     private String uid;
-
-    @OneToMany(mappedBy = "user")
-    private List<Membership> groups;
 
     public Long getId() {
         return id;
@@ -38,19 +32,6 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public List<Membership> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(List<Membership> groups) {
-        this.groups = groups;
-    }
-
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", uid=" + uid + ", groups=" + groups + "]";
     }
 
 }

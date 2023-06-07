@@ -22,6 +22,6 @@ public class GroupService {
     }
 
     public List<Group> getAllGroupsMatchKeyword(String keyWord) {
-        return groupRepository.findGroupsByNameLike(keyWord);
+        return groupRepository.findGroupsByNameContainingIgnoreCase(keyWord);
     }
 }

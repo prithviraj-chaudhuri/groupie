@@ -2,15 +2,15 @@ package com.open.groupie.controllers;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.open.groupie.models.db.Group;
 import com.open.groupie.services.GroupService;
 
-@Controller
+@RestController
 @RequestMapping(value = "/group")
 public class GroupController {
 
@@ -25,8 +25,9 @@ public class GroupController {
         return groupService.getAllGroups();
     }
 
-    @GetMapping(value = "/{keyword}")
-    public List<Group> getGroupsByKeyword(@PathVariable String keyword) {
+    @GetMapping(value = "/search/{keyword}")
+    public List<Group> getGroupsByKeyword(@PathVariable(name = "keyword") String keyword) {
+        System.out.println(keyword);
         return groupService.getAllGroupsMatchKeyword(keyword);
     }
 }

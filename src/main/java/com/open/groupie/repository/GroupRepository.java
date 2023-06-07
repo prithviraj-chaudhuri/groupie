@@ -11,5 +11,5 @@ import com.open.groupie.models.db.Group;
 public interface GroupRepository extends CrudRepository<Group, String> {
     List<Group> findAll();
 
-    List<Group> findGroupsByNameLike(String keyWord);
+    List<Group> findGroupsByNameContainingIgnoreCase(String keyWord);
 }
